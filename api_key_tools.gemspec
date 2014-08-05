@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Samuel O. Obukwelu"]
   spec.email         = ["sam@fcgmedia.com"]
   spec.summary       = %q{A small set of tools to encode and validate data sent to api }
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.description   = %q{A tool to protect api data}
   spec.homepage      = ""
   spec.license       = "MIT"
 
