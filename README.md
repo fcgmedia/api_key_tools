@@ -19,10 +19,12 @@ Or install it yourself as:
 ## Usage
 
 To encode:
+
   key_encoder = ApiKeyTools::Encode.new(user_id, secret, time_as_an_integer)
   open_secret = key_encoder.to_s # this is what you want exposed not the secret
 
 To validate:
+
   validator = ApiKeyTools::Validator.new(key_encoder, open_secret)
   validator.valid?
 
