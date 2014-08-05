@@ -23,6 +23,7 @@ module ApiKeyTools
 
   class Validator
     TIME_THRESHOLD = 60 * 5 # 5 minutes or 300 seconds
+
     def initialize(encoder, value)
       @encoder = encoder
       @value = value
@@ -35,7 +36,8 @@ module ApiKeyTools
     private
     def within_time_limit?
       time_now_as_int = Time.now.to_i
-      @encoder.time >= time_now_as_int && @encoder.time <= time_now_as_int + TIME_THRESHOLD
+      @encoder.time > time_now_as_int - TIME_THRESHOLD &&
+        @encoder.time < time_now_as_int
     end
   end
 end
