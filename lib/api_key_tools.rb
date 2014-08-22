@@ -37,7 +37,7 @@ module ApiKeyTools
     def within_time_limit?
       time_now_as_int = Time.now.to_i
       @encoder.time >= time_now_as_int - TIME_THRESHOLD &&
-        @encoder.time < time_now_as_int
+        @encoder.time <= time_now_as_int
     end
   end
 end

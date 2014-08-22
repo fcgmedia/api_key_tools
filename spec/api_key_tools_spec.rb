@@ -32,6 +32,14 @@ describe ApiKeyTools::Validator do
       end
     end
 
+    context "when validating before a second has passed" do
+      let(:value){ "51b61e2e0569a8f8929de0cbc25714f4abadcad2" }
+      it "should be true" do
+        subject
+        expect(subject.valid?).to eq(true)
+      end
+    end
+
     context "valid value but pass the time limit" do
       let(:value){ "51b61e2e0569a8f8929de0cbc25714f4abadcad2" }
       it "should be false" do
